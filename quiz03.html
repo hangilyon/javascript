@@ -29,16 +29,18 @@
 	function returnImg(){
 		var getSrc = document.getElementById('img').src
 		for(i=1;i<=8;i++){
-			setSrc="file:///C:/java/jsp_workspace/javascript/resources/images/test"+i+".jpg"
+			setSrc="file:///C:/java/jsp_workspace/javascript/resources/images/%EC%B5%9C%EA%B7%BC%EC%83%81%ED%92%880"+i+".jpg"
+			console.log(getSrc)
+			console.log(setSrc)
 			if(getSrc==setSrc){
 				if(i==1){
 					i=8
-					setSrc="resources/images/test"+i+".jpg"
+					setSrc="resources/images/최근상품0"+i+".jpg"
 					document.getElementById('img').src = setSrc
 					document.getElementById('num').innerHTML = i
 					break;
 				}
-				setSrc="resources/images/test"+(i-1)+".jpg"
+				setSrc="resources/images/최근상품0"+(i-1)+".jpg"
 				document.getElementById('img').src = setSrc
 				document.getElementById('num').innerHTML = (i-1)
 				break;
@@ -48,16 +50,16 @@
 	function nextImg(){
 		var getSrc = document.getElementById('img').src
 		for(i=1;i<=8;i++){
-			setSrc="file:///C:/java/jsp_workspace/javascript/resources/images/test"+i+".jpg"
+			setSrc="file:///C:/java/jsp_workspace/javascript/resources/images/%EC%B5%9C%EA%B7%BC%EC%83%81%ED%92%880"+i+".jpg"
 			if(getSrc==setSrc){
 				if(i==8){
 					i=1
-					setSrc="resources/images/test"+i+".jpg"
+					setSrc="resources/images/최근상품0"+i+".jpg"
 					document.getElementById('img').src = setSrc
 					document.getElementById('num').innerHTML = i
 					break;
 				}
-				setSrc="resources/images/test"+(i+1)+".jpg"
+				setSrc="resources/images/최근상품0"+(i+1)+".jpg"
 				document.getElementById('img').src = setSrc
 				document.getElementById('num').innerHTML = (i+1)
 				break;
@@ -69,7 +71,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<img id="img" src="resources/images/test1.jpg">
+		<img id="img" src="resources/images/최근상품01.jpg">
 		<div class="btn">
 		<button onclick="returnImg()">이전사진</button><p id="num"> 1 </p><p>번째 사진</p><button onclick="nextImg()">다음사진</button>
 		</div>

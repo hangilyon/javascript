@@ -33,33 +33,52 @@ text-align: center;
 }
 </style>
 <script type="text/javascript">
+	var myVar
 	function setImg(){
+		clearInterval(myVar)
 		let cont = document.getElementById('setImg')
+		let setText = document.getElementById('setText')
+		setText.innerHTML=""
 		if(event.target.id=="btn1"){
 			cont.style.backgroundColor="yellow"
 			cont.style.display="flex"
-			cont.getElementsByTagName('h2').innerHTML="버튼 1 클릭"
+			setText.innerHTML="버튼 1 클릭"
 		}
 		else if(event.target.id=="btn2"){
 			cont.style.backgroundColor="green"
 			cont.style.display="flex"
-			cont.getElementsByTagName('h2').innerHTML="버튼 2 클릭"
-			console.log(cont.getElementsByTagName('h2').innerHTML)
-			console.log(cont)
+			setText.innerHTML="버튼 2 클릭"
 		}
 		else if(event.target.id=="btn3"){
 			cont.style.backgroundColor="pink"
 			cont.style.display="flex"
-			cont.getElementsByTagName('h2').innerHTML="버튼 3 클릭"
+			setText.innerHTML="버튼 3 클릭"
 		}
 		else if(event.target.id=="btn4"){
 			cont.style.backgroundColor="red"
-			cont.getElementsByTagName('h2').innerHTML="버튼 4 클릭"
+			cont.style.display="flex"
+			setText.innerHTML="버튼 4 클릭"
+			myVar = setInterval(autoImg,100)
 			
 		}
 		else if(event.target.id=="btn5"){
 			cont.style.display="none"
 		}
+	}
+	var isP = true
+	var cnt = 0
+	function autoImg(){
+		if(isP == true){
+			cont.style.display="flex"
+			isP = false;
+			console.log(cont)
+			cnt++
+		}else{
+			cont.style.display="none"
+			isP = true;
+			cnt++
+		}
+		console.log(cnt)
 	}
 </script>
 </head>
@@ -73,7 +92,7 @@ text-align: center;
 			<input type="button" id="btn5" value="지우기" onclick="setImg()">
 		</div>
 		<div id="cont">
-			<div id="setImg"><h2></h2></div>
+			<div id="setImg"><h2 id="setText"></h2></div>
 		</div>
 	</div>
 	
